@@ -1,0 +1,20 @@
+use orders;
+select * from details;
+# what is the total amount each customer spent on food?
+select customerID,orderprice,sum(orderprice) over (partition by customerID) from details;
+
+# how many days has each customer ordered food?
+select customerID, count(customerID) over (partition by customerID) as count from details;
+
+# what was the first item from the menu purchased by each customer?
+select customerID, items, count from (select customerID, items, row_number() 
+   over (partition by customerID) as count from details) as sq where count=1;
+
+# which item is most popular?
+select customerID, items, count from (select customerID, items, row_number() 
+   over (partition by items order by customerID) as count from details) as sq order by count desc limit 1;
+
+# which item was purchased last by each customer?
+select customerID, items, count from (select customerID, items, row_number() 
+   over (partition by customerID order by customerID) as count from details) as sq order by count desc limit 1;
+ 
