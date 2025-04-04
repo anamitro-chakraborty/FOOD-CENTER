@@ -1,0 +1,11 @@
+orderID,customerID,orderdate,orderprice,items
+1,101,04-02-2024,500,paneer momo
+2,102,04-02-2024,350,veg momo
+3,101,05-03-2024,150,noodles
+4,103,05-05-2024,200,vada pav
+5,104,06-05-2024,300,biriyani
+6,104,06-06-2024,850,chole bhature
+7,105,06-07-2024,700,paneer momo
+8,101,06-09-2024,250,veg momo
+9,104,06-09-2024,1000,vada pav
+10,115,06-09-2024,1500,paneer momo
